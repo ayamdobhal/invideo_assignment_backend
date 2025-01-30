@@ -1,6 +1,9 @@
 defmodule InvideoAssignmentBackend.Router do
   use Plug.Router
 
+  plug(Plug.Logger)
+  plug(CORSPlug, origin: "*")
+
   plug(:match)
   plug(:dispatch)
 
