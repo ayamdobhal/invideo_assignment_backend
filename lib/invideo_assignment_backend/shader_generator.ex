@@ -7,7 +7,12 @@ defmodule InvideoAssignmentBackend.ShaderGenerator do
       "contents" => [
         %{
           "parts" => [
-            %{"text" => "Generate a GLSL shader for: " <> description <> "Return only the code"}
+            %{
+              "text" =>
+                "Generate a GLSL fragment shader for webgl 2: " <>
+                  description <>
+                  "Return only the code with one main function and dont format it in codeblock"
+            }
           ]
         }
       ]
