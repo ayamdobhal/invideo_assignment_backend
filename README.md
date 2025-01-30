@@ -1,21 +1,54 @@
-# InvideoAssignmentBackend
+# invideo_assignment_backend
 
-**TODO: Add description**
+The backend for the assignment. Written in Elixir using the Plug library.
+Has a single `/generate_shader` (POST) method that takes a `description` in the body and returns a GLSL shader code.
 
-## Installation
+## Requirements
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `invideo_assignment_backend` to your list of dependencies in `mix.exs`:
+- Elixir
+- Gemini API Key
 
-```elixir
-def deps do
-  [
-    {:invideo_assignment_backend, "~> 0.1.0"}
-  ]
-end
+## Set up
+
+1. Clone the Repository
+
+```bash
+git clone https://github.com/ayamdobhal/invideo_assignment_backend
+cd invideo_assignment_backend
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/invideo_assignment_backend>.
+2. Install Dependencies
 
+```bash
+mix deps.get
+```
+
+3. Export your Gemini API Key
+
+```bash
+export GEMINI_API_KEY=<your-gemini-api-key>
+```
+
+4. Running the Server
+
+```bash
+mix run --no-halt
+```
+
+The server can be accessed at [http://localhost:4000](https://localhost:4000)
+
+## Testing
+
+To run the tests:
+
+Make sure Gemini API Key is exported to the environment first.
+
+```bash
+export GEMINI_API_KEY=<your-gemini-api-key>
+```
+
+Then run:
+
+```bash
+mix test
+```
