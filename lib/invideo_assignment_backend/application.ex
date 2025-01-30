@@ -5,15 +5,19 @@ defmodule InvideoAssignmentBackend.Application do
 
   use Application
 
-  @impl true
   def start(_type, _args) do
+    port = 4000
+
     children = [
-      # Starts a worker by calling: InvideoAssignmentBackend.Worker.start_link(arg)
-      # {InvideoAssignmentBackend.Worker, arg}
+      {Plug.Cowboy,
+       scheme: :http,
+       plug: InvideoAssignmentBackend.Router,
+       options: [port: port, protocol_options: [request_timeout: 300_000]]}
     ]
 
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
+    # Print server startup message
+    IO.puts("🚀 Server is running at http://localhost:#{port}")
+
     opts = [strategy: :one_for_one, name: InvideoAssignmentBackend.Supervisor]
     Supervisor.start_link(children, opts)
   end

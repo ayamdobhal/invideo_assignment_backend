@@ -12,9 +12,7 @@ defmodule InvideoAssignmentBackend do
       :world
 
   """
-  use Application
-
-  def start(_type, _args) do
-    Plug.Cowboy.http(InvideoAssignmentBackend.Router, [], port: 4000)
+  def hello do
+    :world
   end
 end
