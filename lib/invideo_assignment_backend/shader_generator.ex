@@ -11,7 +11,7 @@ defmodule InvideoAssignmentBackend.ShaderGenerator do
               "text" =>
                 "Generate a GLSL fragment shader for webgl 2: " <>
                   description <>
-                  "Return only the code with one main function and dont format it in codeblock"
+                  ". Return only the code with one main function and dont format it in codeblock"
             }
           ]
         }
